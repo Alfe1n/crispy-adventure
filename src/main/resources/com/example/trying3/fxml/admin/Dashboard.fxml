@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- Layout Utama Menggunakan HBox -->
+
+<HBox minHeight="1080.0" minWidth="1920.0" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trying3.controller.admin.DashboardAdminController">
+    <children>
+        <!-- Sidebar Navigasi (Sebelah Kiri) -->
+        <VBox alignment="TOP_CENTER" prefWidth="280.0" styleClass="sidebar">
+            <children>
+                <!-- Logo dan Judul di Sidebar -->
+                <HBox alignment="CENTER_LEFT" prefHeight="112.0" spacing="10.0">
+                    <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+<!--                                <Image url="@picture/logo.png" />-->
+                            </image>
+                        </ImageView>
+                        <Label styleClass="sidebar-title" text="CRM Percetakan" />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="30.0" />
+                    </VBox.margin>
+                    <padding>
+                        <Insets left="20.0" />
+                    </padding>
+                </HBox>
+
+                <!-- Tombol Navigasi -->
+                <Label fx:id="btnDashboard" onMouseClicked="#handleDashboardClick" styleClass="nav-button" text="Dashboard">
+               <graphic>
+                  <ImageView fx:id="dashboardIcon" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../pictures/dashboardDark.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Label>
+                <Label fx:id="btnKelolaPesanan" onMouseClicked="#handleKelolaPesananClick" styleClass="nav-button" text="Kelola Pesanan">
+               <graphic>
+                  <ImageView fx:id="kelolaPesananIcon" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../pictures/shopping-cartDark.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Label>
+                <Label fx:id="btnPembayaran" onMouseClicked="#handlePembayaranClick" styleClass="nav-button" text="Pembayaran">
+               <graphic>
+                  <ImageView fx:id="pembayaranIcon" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../pictures/credit-cardDark.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Label>
+                <Label fx:id="btnManagementUser" onMouseClicked="#handleManajemenUserClick" styleClass="nav-button" text="Manajemen User">
+               <graphic>
+                  <ImageView fx:id="manajemenUserIcon" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../pictures/usersDark.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Label>
+                <Label fx:id="btnPengaturan" onMouseClicked="#handlePengaturanClick" styleClass="nav-button" text="Pengaturan">
+               <graphic>
+                  <ImageView fx:id="pengaturanIcon" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../pictures/settingsDark.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Label>
+                <Label fx:id="btnNotifikasi" onMouseClicked="#handleNotifikasiClick" styleClass="nav-button" text="Notifikasi">
+               <graphic>
+                  <ImageView fx:id="notifikasiIcon" fitHeight="20.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../pictures/bellDark.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Label>
+                <Label fx:id="btnLogout" onMouseClicked="#handleLogoutClick" styleClass="nav-button-logout" text="Logout" />
+            </children>
+            <padding>
+                <Insets top="20.0" />
+            </padding>
+        </VBox>
+
+        <!-- Konten Utama (Sebelah Kanan) -->
+        <VBox HBox.hgrow="ALWAYS">
+            <children>
+                <!-- Header Konten -->
+                <HBox alignment="CENTER_LEFT" prefHeight="80.0" styleClass="header">
+                    <padding>
+                        <Insets left="30.0" right="30.0" />
+                    </padding>
+                    <children>
+                        <Label styleClass="header-title" text="Selamat Datang, Admin!" />
+                    </children>
+                </HBox>
+
+                <!-- Area Konten Dinamis -->
+                <StackPane fx:id="contentArea" styleClass="content-area" VBox.vgrow="ALWAYS" />
+            </children>
+        </VBox>
+    </children>
+</HBox>
