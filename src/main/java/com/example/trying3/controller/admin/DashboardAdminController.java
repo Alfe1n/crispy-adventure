@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-public class DashboardController implements Initializable {
+public class DashboardAdminController implements Initializable {
 
     // --- Elemen FXML dari Dashboard.fxml ---
     @FXML private Label btnDashboard;
@@ -150,7 +150,7 @@ public class DashboardController implements Initializable {
                 contentArea.getChildren().add(activePane);
 
                 // Jika yang di-load adalah dashboard, inisialisasi komponennya
-                if ("/com/example/trying3/fxml/admin/DashboardPane.fxml".equals(fxmlFile)) {
+                if ("DashboardPane.fxml".equals(fxmlFile)) {
                     initializeDashboardComponents(loader);
                 }
             }
