@@ -29,12 +29,12 @@
                             <children>
                                 <HBox alignment="CENTER_LEFT">
                                     <children>
-                                        <Label prefHeight="17.0" prefWidth="118.0" styleClass="stat-title" text="Total Pesanan" HBox.hgrow="ALWAYS" />
-                                        <ImageView fitHeight="18.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" styleClass="stat-icon">
-                                            <image>
-<!--                                                <Image url="@pictures/shopping-cartDark.png" />-->
-                                            </image>
-                                        </ImageView>
+                                        <Label styleClass="stat-title" text="Total Pesanan" HBox.hgrow="ALWAYS" />
+                              <ImageView fitHeight="19.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../pictures/shopping-cartDark.png" />
+                                 </image>
+                              </ImageView>
                                     </children>
                                 </HBox>
                                 <Label fx:id="totalPesananLabel" styleClass="stat-value" text="0" />
@@ -44,21 +44,30 @@
                         <!-- Tambahkan 3 kotak stat lainnya di sini dengan cara yang sama -->
                         <VBox styleClass="stat-box" HBox.hgrow="ALWAYS">
                             <children>
-                                <Label styleClass="stat-title" text="Pesanan Selesai" />
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                                      <Label styleClass="stat-title" text="Pesanan Selesai" HBox.hgrow="ALWAYS" />
+                              <ImageView fitHeight="22.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../pictures/shopping-cartDark.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
                                 <Label styleClass="stat-value" text="0" />
                                 <Label styleClass="stat-subtitle" text="0% dari total" />
                             </children>
                         </VBox>
                         <VBox styleClass="stat-box" HBox.hgrow="ALWAYS">
                             <children>
-                                <Label styleClass="stat-title" text="Pembayaran Pending" />
+                                <Label styleClass="stat-title" text="Pembayaran Pending" VBox.vgrow="ALWAYS" />
                                 <Label styleClass="stat-value" text="0" />
                                 <Label styleClass="stat-subtitle" text="Belum terverifikasi" />
                             </children>
                         </VBox>
                         <VBox styleClass="stat-box" HBox.hgrow="ALWAYS">
                             <children>
-                                <Label styleClass="stat-title" text="Total Pendapatan" />
+                                <Label styleClass="stat-title" text="Total Pendapatan" VBox.vgrow="ALWAYS" />
                                 <Label styleClass="stat-value" text="Rp 0" />
                                 <Label styleClass="stat-subtitle" text="Pembayaran terverifikasi" />
                             </children>

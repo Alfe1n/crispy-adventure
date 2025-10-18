@@ -1,4 +1,4 @@
-package com.example.trying3;
+package com.example.trying3.config;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

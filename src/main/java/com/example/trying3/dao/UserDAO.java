@@ -1,4 +1,7 @@
-package com.example.trying3;
+package com.example.trying3.dao;
+
+import com.example.trying3.config.DatabaseConnection;
+import com.example.trying3.model.User;
 
 import java.sql.*;
 import java.util.ArrayList;

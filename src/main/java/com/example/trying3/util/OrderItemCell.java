@@ -1,5 +1,7 @@
-package com.example.trying3;
+package com.example.trying3.util;
 
+import com.example.trying3.MainApplication;
+import com.example.trying3.model.Order;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -31,7 +33,8 @@ public class OrderItemCell extends ListCell<Order> {
         } else {
             // Load FXML hanya jika belum pernah di-load untuk sel ini
             if (fxmlLoader == null) {
-                fxmlLoader = new FXMLLoader(getClass().getResource("OrderItemCell.fxml"));
+                String fxmlPath = "fxml/admin/OrderItemCell.fxml";
+                fxmlLoader = new FXMLLoader(MainApplication.class.getResource(fxmlPath));
                 fxmlLoader.setController(this); // Penting! Controller-nya adalah kelas ini sendiri
                 try {
                     fxmlLoader.load();
@@ -46,10 +49,20 @@ public class OrderItemCell extends ListCell<Order> {
             statusLabel.setText(order.getStatus());
 
             // Set warna status secara dinamis
-            String style = String.format("-fx-background-color: %s; -fx-background-radius: 15; -fx-text-fill: white; -fx-alignment: center; -fx-padding: 8 16;", order.getStatusColor());
-            statusLabel.setStyle(style);
+            statusLabel.getStyleClass().removeAll("status-proses", "status-selesai", "status-pending", "status-batal");
+            String statusStyle = switch (order.getStatus().toLowerCase()) {
+                case "produksi", "proses desain" -> "status-proses";
+                case "selesai" -> "status-selesai";
+                case "menunggu konfirmasi" -> "status-pending";
+                case "dibatalkan" -> "status-batal";
+                default -> "";
+            };
+            if (!statusStyle.isEmpty()) {
+                statusLabel.getStyleClass().add(statusStyle);
+            }
 
             // Tampilkan HBox yang sudah diisi data sebagai graphic untuk sel ini
+            setText(null);
             setGraphic(rootBox);
         }
     }

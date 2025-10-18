@@ -1,4 +1,4 @@
-package com.example.trying3.controller.dashboard;
+package com.example.trying3.controller.admin;
 
 import com.example.trying3.MainApplication;
 import com.example.trying3.model.Order;
@@ -200,7 +200,6 @@ public class DashboardAdminController implements Initializable {
         Task<Integer> statsTask = new Task<>() {
             @Override
             protected Integer call() throws Exception {
-                // Simulasi pemanggilan database
                 Thread.sleep(500); // Hapus ini jika sudah pakai database asli
                 return userDAO.getTotalUsers(); // Ganti dengan method yang sesuai
             }
